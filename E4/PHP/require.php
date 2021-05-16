@@ -4,8 +4,8 @@
 function base_connection() : void
 {
 	$serverName="localhost";
-	$user="Easyloc_user";
-	$password="pass123";
+	$user="root";
+	$password="root";
 	$database="Easyloc";
 	$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
 
@@ -13,10 +13,10 @@ function base_connection() : void
 } 
 
 function init_php_session() :bool{
-=======
+
 function init_php_session() : bool
 {
->>>>>>> main
+
 	if(!session_id())
 	{
 		session_start();

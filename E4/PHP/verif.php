@@ -2,8 +2,8 @@
 	require "require.php";
 	init_php_session();
 		$serverName="localhost";
-		$user="Easyloc_user";
-		$password="pass123";
+		$user="root";
+		$password="root";
 		$database="Easyloc";
 
 		$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);

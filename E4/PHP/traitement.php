@@ -8,8 +8,8 @@
 	<?php
 
 		$serverName="localhost";
-		$user="Easyloc_user";
-		$password="pass123";
+		$user="root";
+		$password="root";
 		$database="Easyloc";
 
 

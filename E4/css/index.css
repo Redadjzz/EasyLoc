@@ -1,0 +1,474 @@
+/*@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');*/
+
+
+
+/*body{ 
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: #131313;
+  color: #fff;
+  font-size: 96px;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -7px;
+}*/
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+}
+  body{
+    background-image: url(https://images8.alphacoders.com/613/613334.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    position: absolute;
+    margin: auto;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    width: 100%;
+
+
+  }
+
+.CardAppartement{
+  display: 
+}
+
+p {
+  font-size: clamp(0.1rem,2.5vw,1.8rem);
+  font-size: 0.9rem;
+}
+h5{
+  font-size: clamp(0.1rem,2.5vw,1.5rem);
+}
+
+img{
+  max-width: 100%;
+}
+
+h1{
+    font-size: 5em;
+    color: white;
+
+}
+
+h2{
+    font-size: 5em;
+    color: white;
+
+}
+
+.titreCv{
+    color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+
+
+
+}
+
+a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+li{
+    list-style: none;
+    display: inline;
+
+
+}
+
+ul{
+    margin-left: auto;
+    margin-right: auto;
+    width: 32.5em;
+
+}
+    
+nav{
+    align-items: center;
+    margin-top: 1em;
+    font-size: 1.5em;
+    opacity: 100%;
+    border-radius: 1px;
+    max-width:100%;
+
+
+}
+.navbar-nav{
+  max-width: 100%;
+}
+
+
+
+}
+
+
+
+.img1{
+  border-radius: 100px;
+    max-width:  70%;
+    height: auto;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    display: block;
+
+
+}
+.img2{
+  border-radius: 100px;
+    max-width:  70%;
+    width: 500px;
+    margin-bottom: 50px;
+    margin-left:auto;
+    display: block;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+
+}
+.img3{
+  border-radius: 100px;
+    max-width:  100%;
+    height: auto;
+    max-height: 100%;
+    margin-left: 16%;
+    margin-bottom: 5%;
+
+}
+.img4{
+  width: 800px;
+  max-width:100%;
+  height:20%;
+  max-height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+}
+
+.img5{
+  width: 800px;
+  max-width:100%;
+  height:20%;
+  max-height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+}
+.img6{
+    width: 800px;
+  max-width:100%;
+  height:20%;
+  max-height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+}
+.img7{
+    width: 800px;
+  max-width:100%;
+  height:20%;
+  max-height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+}
+
+
+
+.home{
+  line-height: 100px;
+  float: left;
+  line-height: normal;
+  transition: 0.7s;
+  color:white;
+  padding-top: 1em;
+  font-size: 1.5em;
+  padding-left: 1em;
+}
+
+
+
+.ContainerText{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: calc((100% / 3) - (1em - 1em / 5));
+    border-radius: 10px;
+    overflow: auto;
+    float: right;
+    margin-right: 15%;
+    padding: 1.5em;
+    max-height: 100%;
+
+}
+.Text2{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: calc((100% / 3) - (1em - 1em / 5));
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    margin-right: 15%;
+    padding: 1.5em;
+    max-height: 100%;
+}
+.Text3{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: calc((100% / 3) - (1em - 1em / 5));
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    margin-right: 15%;
+    padding: 1.5em;
+    max-height: 100%;
+}
+
+
+/*
+.ContainerLeft {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+}
+
+.ContainerMid {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+}
+.ContainerRight {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+}*/
+
+
+.selected
+.Text3
+{
+    width:1000px;
+  position: static;
+  margin-left:  75px;
+  max-width: 100%;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selected
+.Text2 {
+  width:1000px;
+  position: static;
+  margin-left:  75px;
+  max-width: 100%;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.selected .img3 {
+margin-top: 5%;
+width: auto;
+margin-left: auto;
+margin-right: auto;
+display: block;
+position: static;
+}
+.selected 
+.ContainerText{
+
+  width:1000px;
+  position: static;
+  margin-left:  75px;
+  max-width: 100%;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.selected 
+.img1{
+  max-width: 50%;
+  position: static;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  border-radius: 100px;
+  margin-bottom: 40px;
+}
+
+.selected .img2 {
+  margin-top: 50px;
+  position: static;
+
+
+}
+/*
+.ContainerMegaPhoto{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+}*/
+
+
+.effet{
+  margin-top: 50px;
+margin-left: 50px; 
+position: sticky;
+}
+.effet1{
+font-size: 55px;
+color:red;
+}
+.effet2{
+font-size:55px;
+color: white;
+}
+
+
+.box .selected {
+    align-self: center;
+      display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+}
+.box
+{
+  max-width: 100%;
+  width:100%;
+}
+
+/* FOOTER*/
+footer{
+     background-color: black;
+     opacity: 70%;
+     
+}
+
+footer .fa:hover{
+   color:white;
+}
+
+.logo{
+    color:#FFF;
+    font-weight:800;
+    font-size:30px;
+}
+
+.adress span , .contact span , .social span , .header-form{
+   color:white; 
+   font-weight: 800; 
+   padding-top:20px;
+   padding-bottom:20px; 
+   display: block;
+   text-transform: uppercase;
+   font-size: 13px;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:white;
+    letter-spacing: 1px;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.adress, .contact , .social{
+    list-style: none;
+}
+.contact{
+   display: flex; /* contexte sur le parent */
+   justify-content: center; /* alignement vertical */
+   flex-direction: column; /* direction d'affichage verticale */
+   margin-left:0.2em;
+}
+
+
+.social li{
+    float:left;
+}
+
+.fa{
+    color:white;
+    margin-right: 10px;
+    font-size:14px;
+}
+
+.btn-search{
+    background: #484848;
+    border: none;
+    color: #FFF;
+    padding: 5px 15px;
+}
+
+.input-search{
+   border: none;
+   height: 30px;
+   padding-left: 10px; 
+}
+
+@media only screen and (max-width: 320px) {
+h1 div {
+font-size: 3em;
+}
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
+@media screen and (max-width: 1280px){}
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px){}
+
+/* Sur les téléviseurs */
+@media tv{}
+
+/* Sur tous types d'écrans orientés verticalement */
+@media all and (orientation: portrait){}
+
+

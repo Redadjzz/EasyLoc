@@ -111,10 +111,47 @@ nav{
   max-width: 100%;
 }
 
-
+.titreAppart{
+margin-top: 4%;
+position: absolute;
+font-size:2em;
+font-weight: 900;
 
 }
 
+#image1{
+border-radius: 100px;
+    max-width:  70%;
+    width: 1000px;
+    margin-bottom: 50px;
+    margin-left:auto;
+    display: block;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+    margin-top: 9%;
+}
+#image2{
+border-radius: 100px;
+    max-width:  70%;
+    width: 1000px;
+    margin-bottom: 50px;
+    margin-left:auto;
+    display: block;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: auto;
+    overflow: auto;
+    float: right;
+    padding: 1.5em;
+    margin-top: 9%;
+    margin-left: 12px;
+}
 
 
 .img1{
@@ -401,74 +438,69 @@ color: white;
 }
 
 /* FOOTER*/
-footer{
-     background-color: black;
-     opacity: 70%;
-     
+
+.footer-basic {
+  padding:40px 0;
+  margin: 0;
+  background-color:black;
+  color:white;
+  opacity: 50%;
+  max-width: 100%;
 }
 
-footer .fa:hover{
-   color:white;
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
 }
 
-.logo{
-    color:#FFF;
-    font-weight:800;
-    font-size:30px;
+.footer-basic li {
+  padding:0 10px;
 }
 
-.adress span , .contact span , .social span , .header-form{
-   color:white; 
-   font-weight: 800; 
-   padding-top:20px;
-   padding-bottom:20px; 
-   display: block;
-   text-transform: uppercase;
-   font-size: 13px;
-   letter-spacing: 3px;
-}
- 
-.adress li p , .contact li a , .social li a{
-    color:white;
-    letter-spacing: 1px;
-    text-decoration:none;
-    font-size:13px;
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
 }
 
-.adress, .contact , .social{
-    list-style: none;
-}
-.contact{
-   display: flex; /* contexte sur le parent */
-   justify-content: center; /* alignement vertical */
-   flex-direction: column; /* direction d'affichage verticale */
-   margin-left:0.2em;
+.footer-basic ul a:hover {
+  opacity:1;
 }
 
-
-.social li{
-    float:left;
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
 }
 
-.fa{
-    color:white;
-    margin-right: 10px;
-    font-size:14px;
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
 }
 
-.btn-search{
-    background: #484848;
-    border: none;
-    color: #FFF;
-    padding: 5px 15px;
+.footer-basic .social > a:hover {
+  opacity:0.9;
 }
 
-.input-search{
-   border: none;
-   height: 30px;
-   padding-left: 10px; 
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:white;
+  margin-bottom:0;
 }
-
 @media only screen and (max-width: 320px) {
 h1 div {
 font-size: 3em;

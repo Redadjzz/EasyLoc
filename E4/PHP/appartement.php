@@ -43,16 +43,17 @@ $request = $bdd->prepare("SELECT * FROM Appartement where id_Appartement = ?");
         <p class='titreAppart'>".$data["Adresse"]."
         <br><br><br></div>";
 
-
-echo "<img class='image1 ' src='../oiAppart/appart1int.jpg'".$data["autreImageAppart"]." class='card-img-top '>";
-echo  "<img class='image2' src='../oiAppart/appart1ext.jpg'".$data["autreImageAppart2"]." class='card-img-top'>";
+echo "<div class='d-flex justify-content-center'>";
+echo "<img id='image1' class=''  src='../oiAppart/appart1int.jpg'".$data["autreImageAppart"]."  '>";
+echo "<img id='image2' class=''  src='../oiAppart/appart1ext.jpg'".$data["autreImageAppart2"]." '>";
+echo "</div>";
+echo "<div>";
     "<p class='descAppart5'>
         GOLDEN BEACH EST UNE PLAGE PRIVÉE DANS UNE COMMUNAUTÉ FERMÉE EXCLUSIVE. En 2016, un joyau tropical moderne et unique en son genre a été créé. AUCUNE ÉCONOMIE N'A ÉTÉ FAITE ! QUARTIERS DU PERSONNEL INCLUS DANS LES 8 CHAMBRES EN-SUITE. PLUS DE 800 M² sur un terrain de 1530 M² avec une belle piscine et un quai privé entièrement équipé.À travers un environnement ZEN-LIKE avec de hauts plafonds, des jardins intérieurs, et de belles sculptures à travers tout, entrez par l'IMPRESSIONNANTE PORTE FRONTALE conçue par l'architecte. La luxueuse voie d'eau est surplombée par la cuisine ultramoderne avec un large coin-repas. Une chambre familiale exclusive avec des boiseries personnalisées et un bureau/librairie avec des fenêtres.
     </p>";
+echo "</div>";
  	}
 ?>
-
-
 </div>
 
 

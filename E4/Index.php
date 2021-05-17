@@ -1,7 +1,7 @@
 <?php 
  $serverName="localhost";
-  $user="Easyloc_user";
-  $password="pass123";
+  $user="root";
+  $password="root";
   $database="Easyloc";
   $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
  ?>
@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
     <!------ Include the above in your HEAD tag ---------->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -69,19 +72,19 @@
   echo "<br><br>";
   while ($data = $request->fetch()){ 
     $uid=$data["id_Appartement"];
-    echo "<div class='card text-white bg-secondary mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["Image"]." class='card-img-top' style='width=500px'>";
+    echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
+        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='PHP/appartement.php?id=".$uid."' class='btn btn-primary'>En savoir plus</a>";
+              echo "<a href='PHP/appartement.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus</a>";
           echo "</div>";
     echo "</div>"; 
 
   }
 ?>      
 </div>  
-ss
+
 <!-- MAISON CARD -->
 <h2 id="Maison">Maison</h2> 
 <div class='d-flex justify-content-center'>
@@ -90,12 +93,12 @@ ss
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
-    echo "<div class='card text-white bg-secondary mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["Image"]." class='card-img-top' style='width=500px'>";
+    echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
+        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;';>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-primary'>En savoir plus </a>";
+              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -111,12 +114,12 @@ ss
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
-    echo "<div class='card text-white bg-secondary mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["Image"]." class='card-img-top' style='width=500px'>";
+    echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
+        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-primary'>En savoir plus </a>";
+              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -132,12 +135,12 @@ ss
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
-    echo "<div class='card text-white bg-secondary mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["Image"]." class='card-img-top' style='width=500px'>";
+    echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
+        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-primary'>En savoir plus </a>";
+              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -153,12 +156,12 @@ ss
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
-    echo "<div class='card text-white bg-secondary mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["Image"]." class='card-img-top' style='width=500px'>";
+    echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
+        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-primary'>En savoir plus </a>";
+              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -181,6 +184,10 @@ ss
             <!-- Jquery needed -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script src="js/scripts.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

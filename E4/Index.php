@@ -1,9 +1,13 @@
 <?php 
+
  $serverName="localhost";
-  $user="root";
-  $password="root";
-  $database="Easyloc";
+$user="Easyloc_user";
+$password="pass123";
+$database="Easyloc";
+$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
   $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
+
+  
  ?>
 
 <!DOCTYPE html>
@@ -43,13 +47,13 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-left: -11px;">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../E4/img/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="../E4/img/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="../E4/img/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -73,10 +77,10 @@
   while ($data = $request->fetch()){ 
     $uid=$data["id_Appartement"];
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
+        echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
-              echo "<p class='card-text'>".$data["Description"]."</p>";
+              echo "<p class='card-text'>".$data["Titre"]."</p>";
               echo "<a href='PHP/appartement.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus</a>";
           echo "</div>";
     echo "</div>"; 
@@ -94,11 +98,11 @@
   echo "<br><br>";
   while ($data = $request->fetch()){ 
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;';>";
+        echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;';>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
-              echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>'>En savoir plus </a>";
+              echo "<p class='card-text'>".$data["Titre"]."</p>";
+             echo "<a href='PHP/maison.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -115,11 +119,11 @@
   echo "<br><br>";
   while ($data = $request->fetch()){ 
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
+        echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
-              echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
+              echo "<p class='card-text'>".$data["Titre"]."</p>";
+              echo "<a href='PHP/bateau.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -136,11 +140,11 @@
   echo "<br><br>";
   while ($data = $request->fetch()){ 
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
+        echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
-              echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
+              echo "<p class='card-text'>".$data["Titre"]."</p>";
+              echo "<a href='PHP/camping.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -157,11 +161,11 @@
   echo "<br><br>";
   while ($data = $request->fetch()){ 
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
-        echo "<img src=".$data["ImagePrincipale"]." class='card-img-top' style='width:500px; height:215px;'>";
+        echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
-              echo "<p class='card-text'>".$data["Description"]."</p>";
-              echo "<a href='' class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
+              echo "<p class='card-text'>".$data["Titre"]."</p>";
+              echo "<a href='PHP/studio.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 

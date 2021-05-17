@@ -29,33 +29,78 @@
 	<title>Appartement</title>
 	 <?php include("../include/header.php")?>
 </head>
+
 <body>
-<div class="d-flex justify-content-center">
+
+<div class='justify-content-center1'>
 <?php
-echo $uid;
+
 $request = $bdd->prepare("SELECT * FROM Appartement where id_Appartement = ?");
 	$request->execute(array($uid));
  	while ($data = $request->fetch()){
 
+    if($data["Dispo"] == 1){
+
+      $Disponible ="Oui";
+    }else{
+      $Disponible="Non";
+    }
+
+echo "<div id='carouselExampleControls' class='carousel slide' data-bs-ride='carousel'>
+  <h1 style='text-align: center; padding: 25px;'>".$data['Titre']."</h1>
+  <div class='carousel-inner'>
+    <div class='carousel-item active'>
+      <img src='../".$data["Other_image"]."' class='d-block w-100' alt='...''>
+    </div>
+    <div class='carousel-item'>
+      <img src='../".$data["Other_image2"]."' class='d-block w-100' alt='...''>
+    </div>
+ </div>
+<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls'>
+    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+    <span class='visually-hidden'>Previous</span>
+  </button>
+
+  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls'>
+    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+    <span class='visually-hidden'>Next</span>
+  </button>
+</div>";
+
+echo"<div id='Description'><p>".$data['Description']."</p></div>";
+
+echo "<div id=infoSup> 
+
+    <table class='table table-dark'>
+      <thead>
+        <tr>
+          <th scope='col'>Prix</th>
+          <th scope='col'>Nombre de piece</th>
+          <th scope='col'>Disponible</th>
+          <th scope='col'>Adresse</th>
+          <th scope='col'>Superficie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>".$data['Prix']."€/semaines</td>
+          <td>".$data['Nb_piece']."</td>
+          <td>".$Disponible."</td>
+          <td>".$data['Adresse']."</td>
+          <td>".$data['Superficie']."</td>
+        </tr>
   
- echo 
-        "<div>
-        <p class='titreAppart'>".$data["Adresse"]."
-        <br><br><br></div>";
+      </tbody>
+</table>
 
-echo "<div class='d-flex justify-content-center'>";
-echo "<img id='image1' class=''  src='../oiAppart/appart1int.jpg'".$data["autreImageAppart"]."  '>";
-echo "<img id='image2' class=''  src='../oiAppart/appart1ext.jpg'".$data["autreImageAppart2"]." '>";
-echo "</div>";
-echo "<div>";
-    "<p class='descAppart5'>
-        GOLDEN BEACH EST UNE PLAGE PRIVÉE DANS UNE COMMUNAUTÉ FERMÉE EXCLUSIVE. En 2016, un joyau tropical moderne et unique en son genre a été créé. AUCUNE ÉCONOMIE N'A ÉTÉ FAITE ! QUARTIERS DU PERSONNEL INCLUS DANS LES 8 CHAMBRES EN-SUITE. PLUS DE 800 M² sur un terrain de 1530 M² avec une belle piscine et un quai privé entièrement équipé.À travers un environnement ZEN-LIKE avec de hauts plafonds, des jardins intérieurs, et de belles sculptures à travers tout, entrez par l'IMPRESSIONNANTE PORTE FRONTALE conçue par l'architecte. La luxueuse voie d'eau est surplombée par la cuisine ultramoderne avec un large coin-repas. Une chambre familiale exclusive avec des boiseries personnalisées et un bureau/librairie avec des fenêtres.
-    </p>";
-echo "</div>";
- 	}
+
+    </div>";
+
+}
+ 	
 ?>
-</div>
 
+</div>
 
 <!--FOOTER !-->
         <?php include("../include/footer.php")  ?>

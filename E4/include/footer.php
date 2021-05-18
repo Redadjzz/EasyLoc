@@ -8,7 +8,7 @@
               <a href="#"><i class="fa fa-github fa-1x"></i></a>
               <a href="#"><i class="fa fa-twitter fa-1x"></i></a>
               <a href="#"><i class="fa fa-facebook fa-1x"></i></a></div>
-            <ul class="list-inline">
+            <ul class="list-inline" style="width:100%;">
                 <li class="list-inline-item"><a href="#">Home</a></li>
                 <li class="list-inline-item"><a href="#">Appartement</a></li>
                 <li class="list-inline-item"><a href="#">Maison</a></li>

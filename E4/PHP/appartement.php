@@ -46,10 +46,10 @@ $request = $bdd->prepare("SELECT * FROM Appartement where id_Appartement = ?");
       $Disponible="Non";
     }
 
-echo "<div id='carouselExampleControls' class='carousel slide' data-bs-ride='carousel'>
+echo "<div id='carouselExampleControls' class='carousel slide ' data-bs-ride='carousel '>
   <h1 style='text-align: center; padding: 25px;'>".$data['Titre']."</h1>
-  <div class='carousel-inner'>
-    <div class='carousel-item active'>
+  <div class='carousel-inner' style='width:50%; margin-left:auto; margin-right:auto; display:block; margin-bottom:20px;'>
+    <div class='carousel-item active' >
       <img src='../".$data["Other_image"]."' class='d-block w-100' alt='...''>
     </div>
     <div class='carousel-item'>
@@ -71,7 +71,7 @@ echo"<div id='Description'><p>".$data['Description']."</p></div>";
 
 echo "<div id=infoSup> 
 
-    <table class='table table-dark'>
+    <table class='table table-dark justify-content-center'>
       <thead>
         <tr>
           <th scope='col'>Prix</th>
@@ -100,7 +100,7 @@ echo "<div id=infoSup>
  	
 ?>
 
-</div>
+
 
 <!--FOOTER !-->
         <?php include("../include/footer.php")  ?>
@@ -109,5 +109,6 @@ echo "<div id=infoSup>
             <!-- Jquery needed -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script src="js/scripts.js"></script>
+    </div>
 </body>
 </html>

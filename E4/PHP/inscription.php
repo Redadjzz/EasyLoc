@@ -45,7 +45,7 @@
 
 				<tr>
 					<td>
-						<input type="text" name="Prénom" id="Prénom" class="form-control" placeholder="Prénom" aria-label="Prénom" aria-describedby="addon-wrapping" style="width: 500px">
+						<input type="text" name="Prenom" id="Prenom" class="form-control" placeholder="Prenom" aria-label="Prenom" aria-describedby="addon-wrapping" style="width: 500px">
 						<br>
 						<span id="errorPrenom"></span>
 					</td>
@@ -62,7 +62,7 @@
 
 				<tr>
 					<td>
-						<input type="text" name="Email" id="Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" style="width: 500px">
+						<input type="email" name="Email" id="Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" style="width: 500px">
 						<br>
 						<span></span>
 					</td>
@@ -71,14 +71,14 @@
 				<tr>
 
 					<td>
-						<span class="fa fa-lock" style="float: left;margin-right: -3%;"></span><input type="text" name="Password" id="Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" style="width: 500px">
+						<span class="fa fa-lock" style="float: left;margin-right: -3%;"></span><input type="password" name="Password" id="Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" style="width: 500px">
 						<br>
 						<span id="erroPass"></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-					<span class="fa fa-lock" style="float: left;margin-right: -3%;"></span><input type="text" name="Verification Password" id="Verification Password" class="form-control" placeholder="Verification Password" aria-label="Verification Password" aria-describedby="addon-wrapping" style="width: 500px">
+					<span class="fa fa-lock" style="float: left;margin-right: -3%;"></span><input type="password" name="Verification Password" id="VerifPassword" class="form-control" placeholder="Verification Password" aria-label="Verification Password" aria-describedby="addon-wrapping" style="width: 500px">
 						<br>
 						<span id="erroPassVerif"></span>
 					</td>

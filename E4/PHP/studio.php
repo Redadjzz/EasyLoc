@@ -1,10 +1,8 @@
 <?php
 session_start(); 
-//connexion a la base de donnée
 	include("infoConnection.php");
 	$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
-	$uid = $_GET["id"]; // je recupere le paramete id passer en parametre pour recupere les donnés correspondant a cette id dans la table Appartement
- $logged = $_SESSION['logged']; 
+	$uid = $_GET["id"];
 	
 ?>
 
@@ -29,7 +27,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
      <script src="../js/animMenu.js"></script>
-	<title>Appartement</title>
+	<title>Studio</title>
 	 <?php include("../include/header.php")?>
 </head>
 
@@ -38,14 +36,14 @@ session_start();
 <div class='justify-content-center1'>
 <?php
 
-$request = $bdd->prepare("SELECT * FROM Appartement where id_Appartement = ?"); // requete preparé qui recupere les infos dans la table Apparetment avec l'id 
+$request = $bdd->prepare("SELECT * FROM Studio where id_Studio = ?");
 	$request->execute(array($uid));
- 	while ($data = $request->fetch()){ // dans qu'il ya des donnés dans la tables j'affiche les inforamtions 
+ 	while ($data = $request->fetch()){
 
-    if($data["Dispo"] == 1){ // si appart dispo 
+    if($data["Dispo"] == 1){
 
       $Disponible ="Oui";
-    }else{ // sinon
+    }else{
       $Disponible="Non";
     }
 
@@ -99,10 +97,6 @@ echo "<div id=infoSup>
 
     </div>";
 
-}
-
-if ($logged == true){
-    echo "<input type='button' onclick='window.location.href='inscription.php';'name='inscription' value='Contacter l'agence' class='btn btn-light d-grid gap-2 col-4 mx-auto' >";
 }
  	
 ?>

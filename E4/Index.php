@@ -1,13 +1,12 @@
-<?php 
+<?php
+session_start();
 
- $serverName="localhost";
+//connexion a la base de donnée 
+$serverName="localhost";
 $user="Easyloc_user";
 $password="pass123";
 $database="Easyloc";
-$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
-  $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
-
-  
+$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password); 
  ?>
 
 <!DOCTYPE html>
@@ -38,7 +37,46 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 
 
                   <!-- NAVBAR !-->
-                <?php include("include/header.php") ?>
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top "
+                   style="padding: 0; margin: 0;">
+                  <div class="container-fluid">
+                <a class="navbar-brand" href="Index.php"  style="color: white; font-size: 1.5em;"><h1 id="EasyLoc">EasyLoc</h1></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 27%">
+
+
+                    <li class="nav-item ">
+                      <a class="nav-link"  class="nav-link js-scroll-trigger" href="#Appartement" style="color: white">Appartement</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" class="nav-link js-scroll-trigger" href="#Maison" style="color: white">Maison</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" class="nav-link js-scroll-trigger" href="#Bateau" style="color: white">Bateau</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" class="nav-link js-scroll-trigger" href="#Camping" style="color: white">Camping</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" class="nav-link js-scroll-trigger" href="#Studio" style="color: white">Studio</a>
+                    </li>                  
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                  <li class="nav-item" id="MonCompteButtonNavBarre">                                 
+                    <a class="nav-link" href="PHP/login.php" style="color: white">Mon Compte</a>
+                  <li class="nav-item" id="MonCompteButtonNavBarre">                                 
+                    <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnexion</a>
+                </li>
+                  </form>
+                </div>
+              </nav>  
+    
+  </header>
 </head>
 
 
@@ -70,18 +108,18 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Appartement">Appartement</h2>
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement");
-  $nb_data = $request->rowCount();
+  $request = $bdd->query("SELECT * FROM Appartement"); // requete qui interoge la bases de donnée
+  $nb_data = $request->rowCount(); // recupere le nombre de colone dans la tables Appartement
 
   echo "<br><br>";
-  while ($data = $request->fetch()){ 
-    $uid=$data["id_Appartement"];
+  while ($data = $request->fetch()){  //boucle qui parcour la table appartement, pour chaque collone on affiche la card 
+    $uid=$data["id_Appartement"]; // je stocke l'id de chaque colone
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Titre"]."</p>";
-              echo "<a href='PHP/appartement.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus</a>";
+              echo "<a href='PHP/appartement.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus</a>"; // je crée un lien vers la page Appartement qui decrie en detail l'appartement, j'utilise la Methode GET pour y passer un parametre qui sera l'id de l'appartement en question, que je vais récuperer dans la page page appartement 
           echo "</div>";
     echo "</div>"; 
 
@@ -93,7 +131,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Maison">Maison</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement ");
+  $request = $bdd->query("SELECT * FROM Maison ");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
@@ -114,7 +152,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Bateau">Yacht</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement");
+  $request = $bdd->query("SELECT * FROM Bateau");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
@@ -135,7 +173,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Camping">Camping</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement");
+  $request = $bdd->query("SELECT * FROM Camping");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
@@ -156,7 +194,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Studio">Studio</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement");
+  $request = $bdd->query("SELECT * FROM Studio");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 

@@ -44,7 +44,7 @@
 				<tr>
 
 					<td>
-						<p><span class="fa fa-lock fa-2x" style="float: top;margin-right: 8px;"></span><input  type="text" name="passwordConnexion" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" style="width: 270px;" ><p>
+						<p><span class="fa fa-lock fa-2x" style="float: top;margin-right: 8px;"></span><input  type="password" name="passwordConnexion" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" style="width: 270px;" ><p>
 					</td>
 
 				</tr>

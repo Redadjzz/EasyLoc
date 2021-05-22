@@ -39,7 +39,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
   <div class="d-flex justify-content-center">
   <div class="login" align="center" style="background-color: rgba(0, 0, 0, 0.5);  border-radius: 10px; margin-top: 10%; height: 600px;width: 700px;">
     <h2 style=" padding: 15px 15px 15px 15px ; color: white; font-size: 3em;">Inscription</h2>
-    <br><br>
+    <br>
     <form id="InsertionData" action="" method="POST">
       
       <table align="center">
@@ -90,12 +90,121 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
       </table>
       <br>
 
-      <button  class="btn btn-light d-grid gap-2 col-6 mx-auto" type="submit" value="Valider" style="color: black; ">Valider</button>
+      <button  class="btn btn-light d-grid gap-2 col-6 mx-auto" type="submit" name ="data_insertion" value="Valider" style="color: black; ">Valider</button>
       
       
     </form>
   </div>
 </div>
+
+
+
+<?php
+  
+  if(isset($_POST["data_insertion"])){
+
+    $typeBien = $_GET["type"];
+    $Titre = htmlspecialchars($_POST['Titre']);
+    $Adresse = htmlspecialchars($_POST['Adresse']);
+    $Nb_piece = htmlspecialchars($_POST['Nb-piece']);
+    $Prix =  htmlspecialchars($_POST['Prix']);
+    $Dispo = 1 ; 
+    $Lien_img = $_POST["Image"];
+    $Description = $_POST["Description"];
+    
+      if ($typeBien == "appartement") {
+        
+      
+        $request = $bdd->prepare("INSERT INTO appartement(Titre,Adresse,Nb_piece,Prix,Dispo,Image,Description) VALUES(:titre, :adresse,:nb_piece, :prix, :dispo, :lien_img, :description)");
+        $request->execute(array(
+          ':titre' => $Titre ,
+          ':adresse' => $Adresse, 
+          ':nb_piece' => $Nb_piece, 
+          ':prix' => $Prix,
+          ':dispo' => $Dispo,
+          ':lien_img' => $Lien_img,
+          ':description' => $Description 
+       ));
+      
+
+           echo '<h1 style="text-align: center;">Insertion Validé</h1><br><br>';
+          echo "<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
+      }
+
+      else if($typeBien =="maison"){
+
+         $request = $bdd->prepare("INSERT INTO maison(Titre,Adresse,Nb_piece,Prix,Dispo,Image,Description) VALUES(:titre, :adresse,:nb_piece, :prix, :dispo, :lien_img, :description)");
+         $request->execute(array(
+          ':titre' => $Titre ,
+          ':adresse' => $Adresse, 
+          ':nb_piece' => $Nb_piece, 
+          ':prix' => $Prix,
+          ':dispo' => $Dispo,
+          ':lien_img' => $Lien_img,
+          ':description' => $Description 
+          ));
+      
+
+           echo '<h1 style="text-align: center;">Insertion Validé</h1><br><br>';
+          echo "<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
+      }
+
+      else if($typeBien == "bateau"){
+        $request = $bdd->prepare("INSERT INTO bateau(Titre,Adresse,Nb_piece,Prix,Dispo,Image,Description) VALUES(:titre, :adresse,:nb_piece, :prix, :dispo, :lien_img, :description)");
+         $request->execute(array(
+          ':titre' => $Titre ,
+          ':adresse' => $Adresse, 
+          ':nb_piece' => $Nb_piece, 
+          ':prix' => $Prix,
+          ':dispo' => $Dispo,
+          ':lien_img' => $Lien_img,
+          ':description' => $Description 
+          ));
+      
+
+          echo '<h1 style="text-align: center;">Insertion Validé</h1><br><br>';
+          echo "<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
+
+      }
+
+      else if($typeBien == "penthouse"){
+        $request = $bdd->prepare("INSERT INTO penthouse(Titre,Adresse,Nb_piece,Prix,Dispo,Image,Description) VALUES(:titre, :adresse,:nb_piece, :prix, :dispo, :lien_img, :description)");
+         $request->execute(array(
+          ':titre' => $Titre ,
+          ':adresse' => $Adresse, 
+          ':nb_piece' => $Nb_piece, 
+          ':prix' => $Prix,
+          ':dispo' => $Dispo,
+          ':lien_img' => $Lien_img,
+          ':description' => $Description 
+          ));
+      
+
+           echo '<h1 style="text-align: center;">Insertion Validé</h1><br><br>';
+          echo "<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
+      }
+
+      else if($typeBien == "studio"){
+        $request = $bdd->prepare("INSERT INTO studio(Titre,Adresse,Nb_piece,Prix,Dispo,Image,Description) VALUES(:titre, :adresse,:nb_piece, :prix, :dispo, :lien_img, :description)");
+         $request->execute(array(
+          ':titre' => $Titre ,
+          ':adresse' => $Adresse, 
+          ':nb_piece' => $Nb_piece, 
+          ':prix' => $Prix,
+          ':dispo' => $Dispo,
+          ':lien_img' => $Lien_img,
+          ':description' => $Description 
+          ));
+      
+          echo '<h1 style="text-align: center;">Insertion Validé</h1><br><br>';
+          echo "<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
+      }
+      
+
+
+  }else{
+      }
+  ?>
 
 
 

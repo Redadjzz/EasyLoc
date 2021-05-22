@@ -85,13 +85,13 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-left: -11px;">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../E4/image/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="image/Slide/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="../E4/image/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="image/Slide/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="../E4/image/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="image/Slide/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -172,7 +172,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 </div> 
 
 <!-- CAMPIN CARD -->
-<h2 id="Camping">Camping</h2> 
+<h2 id="Camping">Penthouse</h2> 
 <div class='d-flex justify-content-center'>
 <?php
   $request = $bdd->query("SELECT * FROM penthouse");
@@ -215,15 +215,8 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 ?>      
 </div> 
 
-
-
-
-
-
         <!--FOOTER !-->
         <?php include("include/footer.php")  ?>
-
-
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

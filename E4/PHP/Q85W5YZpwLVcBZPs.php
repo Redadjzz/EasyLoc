@@ -57,33 +57,22 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
 
 
 <div id="formBien">
-  <br><br>
+  <br><br><br>
+
     <h3>Informations sur les biens</h3>
     <br>
     <form action="" method="POST">
       <label>Choissisez le type de bien à afficher</label>
       <select name="bien">
-          <option>--choisissez une option--</option>
-          <option value="Appartement">Appartement</option>
-          <option value="Maison">Maison</option>
-          <option value="Bateau">Bateau</option>
-          <option value="Studio">Studio</option>
-          <option value="Penthouse">Penthouse</option>
+          <option value="appartement">Appartement</option>
+          <option value="maison">Maison</option>
+          <option value="bateau">Bateau</option>
+          <option value="studio">Studio</option>
+          <option value="penthouse">Penthouse</option>
       </select>
       <input type="submit" value="valider" name="data_bien"> 
     </form> 
 </div>
-
-</div>
-
-
-<div id="InfoUser">
-  <h1>Informations sur les Utilisateurs</h1>
-
-</div>
-
-
-
 
 <?php 
 }
@@ -111,17 +100,13 @@ if(isset($_POST["data_bien"])){
       while ($data = $request->fetch())
       {
 
-        $idBien = $data['id_Appartement'];
+        $idBien = $data['id'];
 
         if($data["Dispo"] == 1){
             $Disponible ="Oui";
         }else{
             $Disponible="Non";
         } 
-
-        echo $idBien;
-        echo $bien; 
-
 
         echo '
           <tbody>
@@ -146,7 +131,7 @@ if(isset($_POST["data_bien"])){
     
 echo "</table>
      </div>
-     <a href='u7SkPmgLNjtJgzV2.php?iduser=".$getid."'>Ajouter information</a>";
+     <a href='u7SkPmgLNjtJgzV2.php?iduser=".$getid."&type=".$bien."'>Ajouter information</a>";
 
   }
 

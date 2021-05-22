@@ -36,7 +36,7 @@ session_start();
 <div class='justify-content-center1'>
 <?php
 
-$request = $bdd->prepare("SELECT * FROM Maison where id_Maison = ?");
+$request = $bdd->prepare("SELECT * FROM maison where id = ?");
 	$request->execute(array($uid));
  	while ($data = $request->fetch()){
 
@@ -57,12 +57,12 @@ echo "<div id='carouselExampleControls' class='carousel slide ' data-bs-ride='ca
       <img src='../".$data["Other_image2"]."' class='d-block w-100' alt='...''>
     </div>
  </div>
-<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls'>
+<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls'  data-bs-slide='prev'>
     <span class='carousel-control-prev-icon' aria-hidden='true'></span>
     <span class='visually-hidden'>Previous</span>
   </button>
 
-  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls'>
+  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls'  data-bs-slide='next'>
     <span class='carousel-control-next-icon' aria-hidden='true'></span>
     <span class='visually-hidden'>Next</span>
   </button>

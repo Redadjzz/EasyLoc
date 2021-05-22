@@ -36,7 +36,7 @@ session_start();
 <div class='justify-content-center1'>
 <?php
 
-$request = $bdd->prepare("SELECT * FROM Studio where id_Studio = ?");
+$request = $bdd->prepare("SELECT * FROM studio where id = ?");
 	$request->execute(array($uid));
  	while ($data = $request->fetch()){
 

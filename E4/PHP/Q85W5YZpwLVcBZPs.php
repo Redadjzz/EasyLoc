@@ -74,10 +74,16 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
     </form> 
 </div>
 
+</div>
+
 
 <div id="InfoUser">
   <h1>Informations sur les Utilisateurs</h1>
+
 </div>
+
+
+
 
 <?php 
 }
@@ -99,16 +105,22 @@ if(isset($_POST["data_bien"])){
           <th scope='col'>Disponible</th>
           <th scope='col'>Adresse</th>
           <th scope='col'>Superficie</th>
+          <th scope='col'>supprimer/Modifier</th>
         </tr>
       </thead>";
       while ($data = $request->fetch())
       {
 
+        $idBien = $data['id_Appartement'];
+
         if($data["Dispo"] == 1){
             $Disponible ="Oui";
         }else{
             $Disponible="Non";
-        }  
+        } 
+
+        echo $idBien;
+        echo $bien; 
 
 
         echo '
@@ -120,24 +132,25 @@ if(isset($_POST["data_bien"])){
           <td>'.$Disponible.'</td>
           <td>'.$data['Adresse'].'</td>
           <td>'.$data['Superficie'].'</td>
+          <td>';
+    echo "<a href='EatT9UuY68GP7cgy.php?id=".$idBien."&type=".$bien."&iduser=".$getid."'>Supprimer</a>
+           <a href=>Modifier</a>
+          </td>
         </tr>
       </tbody>
-      ';
+      ";
+
+
               
       }
     
 echo "</table>
-     </div>";
+     </div>
+     <a href='u7SkPmgLNjtJgzV2.php?iduser=".$getid."'>Ajouter information</a>";
+
   }
 
 ?>
 
-
-
-
-
-
-           
-   
 </body>
 </html>

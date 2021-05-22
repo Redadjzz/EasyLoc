@@ -108,12 +108,12 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Appartement">Appartement</h2>
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Appartement"); // requete qui interoge la bases de donnée
+  $request = $bdd->query("SELECT * FROM appartement"); // requete qui interoge la bases de donnée
   $nb_data = $request->rowCount(); // recupere le nombre de colone dans la tables Appartement
 
   echo "<br><br>";
-  while ($data = $request->fetch()){  //boucle qui parcour la table appartement, pour chaque collone on affiche la card 
-    $uid=$data["id_Appartement"]; // je stocke l'id de chaque colone
+  while ($data = $request->fetch()){  //boucle qui parcoure la table appartement, pour chaque collone on affiche la card 
+    $uid=$data["id"]; // je stocke l'id de chaque colone
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
@@ -131,10 +131,11 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Maison">Maison</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Maison ");
+  $request = $bdd->query("SELECT * FROM maison ");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
+    $uid=$data["id"];
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;';>";
           echo "<div class='card-body'>";
@@ -152,10 +153,11 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Bateau">Yacht</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Bateau");
+  $request = $bdd->query("SELECT * FROM bateau");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
+    $uid=$data["id"];
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
@@ -173,16 +175,17 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Camping">Camping</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Camping");
+  $request = $bdd->query("SELECT * FROM penthouse");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
+    $uid=$data["id"];
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";
               echo "<h5 class='card-title'></h5>";
               echo "<p class='card-text'>".$data["Titre"]."</p>";
-              echo "<a href='PHP/camping.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
+              echo "<a href='PHP/penthouse.php?id=".$uid."'class='btn btn-light d-grid gap-2 col-13 mx-auto'>En savoir plus </a>";
           echo "</div>";
     echo "</div>"; 
 
@@ -194,10 +197,11 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 <h2 id="Studio">Studio</h2> 
 <div class='d-flex justify-content-center'>
 <?php
-  $request = $bdd->query("SELECT * FROM Studio");
+  $request = $bdd->query("SELECT * FROM studio");
   $nb_data = $request->rowCount();
   echo "<br><br>";
   while ($data = $request->fetch()){ 
+    $uid=$data["id"];
     echo "<div class='card text-white bg-dark mb-3' style='width:500px; margin: 10px 10px 10px 10px ;'>";
         echo "<img src=".$data["Image"]." class='card-img-top' style='width:500px; height:215px;'>";
           echo "<div class='card-body'>";

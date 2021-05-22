@@ -38,7 +38,7 @@ session_start();
 <div class='justify-content-center1'>
 <?php
 
-$request = $bdd->prepare("SELECT * FROM Appartement where id_Appartement = ?"); // requete preparé qui recupere les infos dans la table Apparetment avec l'id 
+$request = $bdd->prepare("SELECT * FROM appartement where id = ?"); // requete preparé qui recupere les infos dans la table Apparetment avec l'id 
 	$request->execute(array($uid));
  	while ($data = $request->fetch()){ // dans qu'il ya des donnés dans la tables j'affiche les inforamtions 
 

@@ -14,6 +14,11 @@ function init_php_session() : bool
 }
 
 
+function getIP(){
+	
+}
+
+
 
 
 

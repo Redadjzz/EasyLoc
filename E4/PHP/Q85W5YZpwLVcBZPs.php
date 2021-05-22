@@ -1,3 +1,20 @@
+<?php
+session_start(); 
+include("infoConnection.php");
+$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
+
+
+if(isset($_GET['id']) AND $_GET['id'] > 0)
+{
+  $getid = intval($_GET['id']);
+  $requestUser = $bdd->prepare('SELECT * FROM Users WHERE id_user = ?');
+  $requestUser->execute(array($getid));
+  $userinfo = $requestUser->fetch();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-     <script src="../js/animMenu.js"></script>
+     
 
 
              <?php
@@ -29,23 +46,111 @@
 </head>
 
 
-<body>  
-  <br><br><br>     
-   <h1>Panel Admin</h1>
+<body>
+
+<?php 
+
+  if($_SESSION['id'] == @$userinfo['id_user'] and !empty($userinfo['id_user'])) // si l'id de l'utilisateur correspond a l'id de session et qu'il n'est pas vide j'affiche le contenue de la page 
+  {
+
+  ?>
+
+
+<div id="formBien">
+  <br><br>
+    <h3>Informations sur les biens</h3>
+    <br>
+    <form action="" method="POST">
+      <label>Choissisez le type de bien à afficher</label>
+      <select name="bien">
+          <option>--choisissez une option--</option>
+          <option value="Appartement">Appartement</option>
+          <option value="Maison">Maison</option>
+          <option value="Bateau">Bateau</option>
+          <option value="Studio">Studio</option>
+          <option value="Penthouse">Penthouse</option>
+      </select>
+      <input type="submit" value="valider" name="data_bien"> 
+    </form> 
+</div>
+
+</div>
+
+
+<div id="InfoUser">
+  <h1>Informations sur les Utilisateurs</h1>
+
+</div>
 
 
 
 
+<?php 
+}
+
+if(isset($_POST["data_bien"])){
+
+  $bien = htmlspecialchars($_POST['bien']);
+  $request = $bdd->query('SELECT * FROM '.$bien.'');
+  $DataExist = $request->rowCount();
+
+    echo "<div id=infoSup> 
+
+    <table class='table table-dark justify-content-center'>
+      <thead>
+        <tr>
+          <th scope='col'>Titre</th>
+          <th scope='col'>Prix</th>
+          <th scope='col'>Nombre de piece</th>
+          <th scope='col'>Disponible</th>
+          <th scope='col'>Adresse</th>
+          <th scope='col'>Superficie</th>
+          <th scope='col'>supprimer/Modifier</th>
+        </tr>
+      </thead>";
+      while ($data = $request->fetch())
+      {
+
+        $idBien = $data['id_Appartement'];
+
+        if($data["Dispo"] == 1){
+            $Disponible ="Oui";
+        }else{
+            $Disponible="Non";
+        } 
+
+        echo $idBien;
+        echo $bien; 
 
 
+        echo '
+          <tbody>
+        <tr>
+         <td>'.$data['Titre'].'</td>
+          <td>'.$data['Prix'].'€/semaines</td>
+          <td>'.$data['Nb_piece'].'</td>
+          <td>'.$Disponible.'</td>
+          <td>'.$data['Adresse'].'</td>
+          <td>'.$data['Superficie'].'</td>
+          <td>';
+    echo "<a href='EatT9UuY68GP7cgy.php?id=".$idBien."&type=".$bien."&iduser=".$getid."'>Supprimer</a>
+           <a href=>Modifier</a>
+          </td>
+        </tr>
+      </tbody>
+      ";
 
 
+              
+      }
+    
+echo "</table>
+     </div>
+     <a href='u7SkPmgLNjtJgzV2.php?iduser=".$getid."'>Ajouter information</a>";
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <!-- Jquery needed -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script src="js/scripts.js"></script>
-    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+  }
+
+?>
+
 </body>
 </html>

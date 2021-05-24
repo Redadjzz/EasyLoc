@@ -1,4 +1,5 @@
 <?php
+//page panel Admin
 session_start(); 
 include("infoConnection.php");
 $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
@@ -154,15 +155,22 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
     </div>
 
     <?php  
-    if(isset($_POST['infoUser']))
+    if(isset($_POST['infoUser'])) // si le formulaire est envoyé 
     {
 
-      $is_admin = $_POST['isAdmin'];
+      $admin = $_POST['isAdmin']; // je recupere la valeur de "isAdmin"
 
-      if($is_admin == "Admin")
+      if($admin == "Admin")
       {
+        $is_admin = 1 ;
+      }
+      else{
+        $is_admin = 0 ; 
+      }
 
-        $requestUser = $bdd->query("SELECT * FROM Users where is_admin = 1");
+
+        $requestUser = $bdd->prepare("SELECT * FROM Users where is_admin = ?"); // je crée la requête qui me permet d'avoir les inforamtions sur l'utilisateurs en fonction de si il est admin ou non 
+        $requestUser->execute(array($is_admin)) ;
         echo "<div id=infoSup> 
 
         <table class='table table-dark justify-content-center'>
@@ -191,52 +199,16 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
           <td>'.$data["Email"].'</td>
           <td>'.$data['Password'].'</td>
           <td>';
-          echo "<a href='RY9pzYX9fTwnqrqn.php?idUserTable=".$idUserTable."&iduser=".$getid."'>Supprimer</a>
+          echo "<a href='RY9pzYX9fTwnqrqn.php?idUserTable=".$idUserTable."&iduser=".$getid."'>Supprimer</a> 
           </td>
           </tr>
           </tbody>
-          ";
+          "; //lien vers la page de suppresion de l'utilisateur, je passe l'id de l'user a suppr ainsi que celui de l'utilisateur actuel en parametre dans l'url donc avec la methode get afin de recupere ses inforamtions sur la page de suppression
         }
 
 
-      }else 
-      {
-       $requestUser = $bdd->query("SELECT * FROM Users where is_admin = 0");
-       echo "<div id=infoSup> 
-
-       <table class='table table-dark justify-content-center'>
-       <thead>
-       <tr>
-       <th scope='col'>Nom</th>
-       <th scope='col'>Prénom</th>
-       <th scope='col'>Pseudo</th>
-       <th scope='col'>Email</th>
-       <th scope='col'>password</th>
-       <th scope='col'>supprimer</th>
-       </tr>
-       </thead>";
-       while ($data = $requestUser->fetch())
-       {
-
-        $idUserTable = $data["id_user"];
-        echo '
-        <tbody>
-        <tr>
-        <td>'.$data['Nom'].'</td>
-        <td>'.$data['Prenom'].'</td>
-        <td>'.$data['Pseudo'].'</td>
-        <td>'.$data["Email"].'</td>
-        <td>'.$data['Password'].'</td>
-        <td>';
-        echo "<a href='RY9pzYX9fTwnqrqn.php?idUserTable=".$idUserTable."&iduser=".$getid."'>Supprimer</a>
       
-        </td>
-        </tr>
-        </tbody>
-        ";
-      }
-
-    }
+      
 
     echo "</table>
     </div>

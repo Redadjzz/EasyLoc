@@ -4,7 +4,7 @@ session_start();
 	include("infoConnection.php");
 	$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
 	$uid = $_GET["id"]; // je recupere le paramete id passer en parametre pour recupere les donnés correspondant a cette id dans la table Appartement
- @$logged = $_SESSION['logged']; 
+ @$logged = $_SESSION['logged'];  //je recuper la variable global de sesion defini dans verif.php afin de savoir si un  utilisateur est connecté 
 	
 ?>
 
@@ -101,8 +101,9 @@ echo "<div id=infoSup>
 
 }
 
-if ($logged == true){
-    echo "<input type='button' onclick='window.location.href='inscription.php';'name='inscription' value='Contacter l'agence' class='btn btn-light d-grid gap-2 col-4 mx-auto' >";
+if ($logged == true){ // si l'utilisateur est connecter il peut contacter l'agence 
+    echo "<input type='button' onclick='window.location.href='inscription.php';'name='inscription' value='Contacter agence' class='btn btn-light d-grid gap-2 col-4 mx-auto' >
+    <br>";
 }
  	
 ?>

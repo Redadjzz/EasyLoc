@@ -34,13 +34,13 @@ session_start();
 
 <?php 
 	echo "<br><br>";
-	if (@$_SESSION["id"] == @intval($_GET["iduser"])){
+	if (@$_SESSION["id"] == @intval($_GET["iduser"])){ // je verifie que l'utilisateur qui arrive sur cett page est bien celui qui c'est connecter en tant que admin 
 	
-		$idUserTable = $_GET["idUserTable"]; 
+		$idUserTable = $_GET["idUserTable"]; // je recupere la valeur de l'id de l'utilisateur a supprimer que j'ai passé en parametre 
 	
 		
 		
-		$request = $bdd->prepare("DELETE FROM Users WHERE id_user = ?");
+		$request = $bdd->prepare("DELETE FROM Users WHERE id_user = ?"); // je crée la requete pour supprimer l'utilisateur 
 		$request->execute(array($idUserTable));
 
 		echo "<h1>données supprimée	!</h1> 

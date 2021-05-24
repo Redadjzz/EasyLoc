@@ -70,7 +70,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
                     <a class="nav-link" href="PHP/login.php" style="color: white">Mon Compte</a>
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
-                    <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnexion</a>
+                    <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnection</a>
                 </li>
                   </form>
                 </div>

@@ -3,6 +3,7 @@ session_start();
 	include("infoConnection.php");
 	$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
 	$uid = $_GET["id"];
+  @$logged = $_SESSION['logged']; 
 	
 ?>
 
@@ -97,6 +98,10 @@ echo "<div id=infoSup>
 
     </div>";
 
+}
+if ($logged == true){
+    echo "<input type='button' onclick='window.location.href='inscription.php';'name='inscription' value='Contacter agence' class='btn btn-light d-grid gap-2 col-4 mx-auto' >
+    <br>";
 }
  	
 ?>

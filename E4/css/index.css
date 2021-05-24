@@ -16,6 +16,10 @@
   letter-spacing: -7px;
 }*/
 
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
 
 
 #panel_admin {
@@ -39,7 +43,7 @@
 }
 
 #Description p {
-  font-size: 25px; 
+  font-size: 15px; 
       color: white;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;

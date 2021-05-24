@@ -5,6 +5,7 @@ session_start();
 	$bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $password);
 	$uid = $_GET["id"]; // je recupere le paramete id passer en parametre pour recupere les donnés correspondant a cette id dans la table Appartement
  @$logged = $_SESSION['logged'];  //je recuper la variable global de sesion defini dans verif.php afin de savoir si un  utilisateur est connecté 
+
 	
 ?>
 
@@ -29,6 +30,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
      <script src="../js/animMenu.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<title>Appartement</title>
 	 <?php include("../include/header.php")?>
 </head>
@@ -48,7 +50,6 @@ $request = $bdd->prepare("SELECT * FROM appartement where id = ?"); // requete p
     }else{ // sinon
       $Disponible="Non";
     }
-
 echo "<div id='carouselExampleControls' class='carousel slide ' data-bs-ride='carousel '>
   <h1 style='text-align: center; padding: 25px;'>".$data['Titre']."</h1>
   <div class='carousel-inner' style='width:50%; margin-left:auto; margin-right:auto; display:block; margin-bottom:20px;'>
@@ -59,12 +60,12 @@ echo "<div id='carouselExampleControls' class='carousel slide ' data-bs-ride='ca
       <img src='../".$data["Other_image2"]."' class='d-block w-100' alt='...''>
     </div>
  </div>
-<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls'data-bs-slide='prev'>
+<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev'>
     <span class='carousel-control-prev-icon' aria-hidden='true'></span>
     <span class='visually-hidden'>Previous</span>
   </button>
 
-  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls'data-bs-slide='next'>
+  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next'>
     <span class='carousel-control-next-icon' aria-hidden='true'></span>
     <span class='visually-hidden'>Next</span>
   </button>

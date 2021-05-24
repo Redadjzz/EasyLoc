@@ -68,7 +68,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
-                    <a class="nav-link" href="PHP/login.php" style="color: white">Mon Compte</a>
+                    <a class="nav-link" href="PHP/login.php" style="color: white">Connexion/Inscription</a>
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
                     <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnection</a>
                 </li>
@@ -85,13 +85,13 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-left: -11px;">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="image/Slide/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/Slide/slide1.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="image/Slide/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/Slide/slide2.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="image/Slide/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
+        <img src="../E4/image/Slide/slide3.jpg" class="d-block w-100" style="height: 338px;" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

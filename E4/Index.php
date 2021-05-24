@@ -70,7 +70,7 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
                     <a class="nav-link" href="PHP/login.php" style="color: white">Connexion/Inscription</a>
                   <li class="nav-item" id="MonCompteButtonNavBarre">                                 
-                    <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnexion</a>
+                    <a class="nav-link" href="PHP/deconnexion.php" style="color: white">Deconnection</a>
                 </li>
                   </form>
                 </div>
@@ -215,15 +215,8 @@ $bdd = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8", $user, $p
 ?>      
 </div> 
 
-
-
-
-
-
         <!--FOOTER !-->
         <?php include("include/footer.php")  ?>
-
-
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

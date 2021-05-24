@@ -34,18 +34,18 @@ session_start();
 
 <?php 
 	echo "<br><br>";
-	if (@$_SESSION["id"] == @intval($_GET["iduser"])){ // si l'id de session de connexion correspond a l'id passé en parametre 
+	if (@$_SESSION["id"] == @intval($_GET["iduser"])){ // je verifie que l'utilisateur qui arrive sur cett page est bien celui qui c'est connecter en tant que admin 
 	
-		$idBien = intval($_GET["id"]);  // je recupere l'id du bien a supprimer 	
-		$typeBien = $_GET["type"]; // je recupere le type de bien a supprimer 
-
-		$sql = "DELETE FROM ".$typeBien." WHERE id=".$idBien; // je crée une requete de suppression
-		$request = $bdd->prepare($sql); 
-		$request->execute(); // j'execute la requête
+		$idUserTable = $_GET["idUserTable"]; // je recupere la valeur de l'id de l'utilisateur a supprimer que j'ai passé en parametre 
+	
+		
+		
+		$request = $bdd->prepare("DELETE FROM Users WHERE id_user = ?"); // je crée la requete pour supprimer l'utilisateur 
+		$request->execute(array($idUserTable));
 
 		echo "<h1>données supprimée	!</h1> 
 		<br>
-		<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>"; // lien vers le panel admin
+		<a href='Q85W5YZpwLVcBZPs.php?id=".$_SESSION['id']."'>Retour</a>";
 
 			
 		}

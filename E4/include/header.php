@@ -31,7 +31,7 @@
                 <li class="nav-item" id="MonCompteButtonNavBarre">                                 
                   <a class="nav-link" href="login.php" style="color: white">Connexion/Inscription</a>
                 <li class="nav-item" id="MonCompteButtonNavBarre">                                 
-                  <a class="nav-link" href="deconnexion.php" style="color: white">Deconnexion</a>
+                  <a class="nav-link" href="deconnexion.php" style="color: white">Deconnection</a>
               </li>
                 </form>
               </div>
